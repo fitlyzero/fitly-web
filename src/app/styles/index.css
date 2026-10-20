@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.workspace-scrollbar {
+  overscroll-behavior: contain;
+  scrollbar-color: rgb(148 163 184 / 0.55) transparent;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.workspace-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.workspace-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgb(148 163 184 / 0.45);
+}

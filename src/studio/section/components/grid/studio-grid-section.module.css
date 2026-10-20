@@ -1,0 +1,110 @@
+.section {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--grid-section-paper-background);
+}
+
+.gridTable {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--grid-section-divider-color);
+}
+
+.gridContainer {
+  flex: 1;
+  min-height: 0;
+}
+
+.gridContainer .embeddedGrid {
+  min-height: 0;
+  border: 0;
+}
+
+.gridContainer .deactivatedRecordRow {
+  color: var(--studio-deactivated-record-text);
+  background-color: var(--studio-deactivated-record-background);
+  box-shadow: inset 3px 0 0 var(--studio-deactivated-record-indicator);
+}
+
+.gridContainer .deactivatedRecordRow:hover {
+  background-color: var(--studio-deactivated-record-hover-background);
+}
+
+.gridContainer .selectedRecordRow {
+  color: inherit;
+  background-color: var(--studio-selected-record-background);
+  box-shadow: inset 3px 0 0 var(--studio-selected-record-indicator);
+}
+
+.gridContainer .selectedRecordRow:hover {
+  background-color: var(--studio-selected-record-hover-background);
+}
+
+.gridContainer .selectedRecordRow.deactivatedRecordRow {
+  color: var(--studio-deactivated-record-text);
+  background-color: var(--studio-deactivated-record-selected-background);
+  box-shadow:
+    inset 3px 0 0 var(--studio-selected-record-indicator),
+    inset 0 0 0 1px var(--studio-deactivated-record-indicator);
+}
+
+.gridContainer .selectedRecordRow.deactivatedRecordRow:hover {
+  background-color: var(--studio-deactivated-record-selected-hover-background);
+}
+
+.editIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.childSections {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.childSectionContent {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.recordDetail {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.recordDetail.deactivatedRecordDetail .detailContent {
+  color: var(--studio-deactivated-record-text);
+  background-color: var(--studio-deactivated-record-background);
+  box-shadow: inset 4px 0 0 var(--studio-deactivated-record-indicator);
+}
+
+.detailContent {
+  min-height: 0;
+  padding: 16px;
+  overflow: auto;
+}
+
+.detailFields {
+  display: grid;
+  grid-auto-rows: minmax(64px, auto);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detailField {
+  height: 100%;
+  min-width: 0;
+}

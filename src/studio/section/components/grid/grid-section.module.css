@@ -1,0 +1,217 @@
+.section {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.resizableLayout {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.resizableLayoutDesktop {
+  grid-template-rows:
+    minmax(0, 1fr)
+    var(--grid-section-splitter-height)
+    var(--grid-section-child-height);
+  height: 100%;
+}
+
+.resizableLayoutMobile {
+  grid-template-rows:
+    minmax(var(--grid-section-primary-min-height), auto)
+    var(--grid-section-splitter-height)
+    var(--grid-section-child-default-height);
+  height: auto;
+}
+
+.resizableLayoutCollapsed.resizableLayoutDesktop {
+  grid-template-rows:
+    minmax(0, 1fr)
+    var(--grid-section-splitter-height);
+}
+
+.resizableLayoutCollapsed.resizableLayoutMobile {
+  grid-template-rows:
+    minmax(var(--grid-section-primary-min-height), auto)
+    var(--grid-section-splitter-height);
+}
+
+.splitter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grid-section-paper-background);
+}
+
+.splitterDesktop {
+  cursor: row-resize;
+  touch-action: none;
+}
+
+.splitterCollapsed {
+  cursor: default;
+}
+
+.splitterDivider {
+  position: absolute;
+  width: 100%;
+}
+
+.splitter .splitterButton {
+  width: 32px;
+  height: 24px;
+  background-color: var(--grid-section-paper-background);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.recordListPanel {
+  min-height: 0;
+}
+
+.singleGridPanel {
+  height: 100%;
+}
+
+.toolbar,
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+}
+
+.toolbar {
+  flex-flow: row wrap;
+}
+
+.detailHeader {
+  flex-direction: row;
+  border-bottom: 1px solid var(--grid-section-divider-color);
+}
+
+.toolbarSpacer,
+.detailHeaderSpacer {
+  flex: 1;
+}
+
+.recordNavigation {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2px;
+}
+
+.recordNavigation .recordNavigationButton {
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+}
+
+.recordPosition {
+  min-width: 42px;
+  color: var(--grid-section-secondary-text);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.gridContainer {
+  flex: 1;
+  min-height: 0;
+}
+
+.gridContainer .embeddedGrid {
+  min-height: 0;
+  border: 0;
+}
+
+.gridContainer .selectedRow,
+.gridContainer .selectedRow:hover {
+  background-color: var(--grid-section-selected-background);
+}
+
+.editIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.recordDetail {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.detailContent {
+  min-height: 0;
+  padding: 16px;
+  overflow: auto;
+}
+
+.detailFields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.relatedRecords {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.relatedTitle {
+  padding: 12px;
+}
+
+.emptyState {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--grid-section-secondary-text);
+}
+
+.filterContent {
+  display: grid;
+  width: 300px;
+  gap: 16px;
+  padding: 24px;
+}
+
+.filterActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (min-width: 600px) {
+  .filterContent {
+    width: 380px;
+  }
+}
+
+@media (max-width: 899.95px) {
+  .singleGridPanel {
+    height: 520px;
+  }
+
+  .recordDetail {
+    height: auto;
+  }
+}
